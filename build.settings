@@ -1,0 +1,39 @@
+-- Supported values for orientation:
+-- portrait, portraitUpsideDown, landscapeLeft, landscapeRight
+
+settings = {
+
+  orientation = {
+    default = "landscapeRight",
+    supported = { "landscapeRight", "landscapeLeft" }
+  },
+
+  iphone = {
+    plist = {
+      UIAppFonts = {
+          "COMIC.TTF"
+      },
+      UIStatusBarHidden = true,
+      UIPrerenderedIcon = true, -- set to false for "shine" overlay
+      --UIApplicationExitsOnSuspend = true, -- uncomment to quit app on suspend
+      CFBundleIconFile = "Icon.png",
+      CFBundleIconFiles = {
+      }
+    }
+  },
+  android = {
+    usesPermissions = {
+
+    },
+    usesFeatures = {
+        -- If you set permissions "ACCESS_FINE_LOCATION" and "ACCESS_COARSE_LOCATION" above,
+        -- you should set the app to NOT require location services:
+        { name="android.hardware.location", required=false },
+        { name="android.hardware.location.gps", required=false },
+        { name="android.hardware.location.network", required=false },
+    },
+  },
+  plugins = {
+
+  }
+}
